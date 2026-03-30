@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design your own custom hat with Atelier's bespoke builder. Choose style, material, color and measurements for a one-of-a-kind creation.">
+  <title>Atelier | Custom Orders — Design Your Own Hat</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎩</text></svg>">
+  <style>
+    .builder-hero { background:var(--bg-alt); margin-top:var(--header-h); padding:var(--space-3xl) 0; text-align:center; }
+    .builder-hero h1 { font-size:var(--fs-3xl); margin-bottom:var(--space-sm); }
+    .builder-hero p { color:var(--text-secondary); max-width:600px; margin:0 auto; }
+    .material-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-md); }
+    .material-card { border:2px solid var(--border); border-radius:var(--radius-md); padding:var(--space-lg); text-align:center; cursor:pointer; transition:all var(--transition); }
+    .material-card:hover, .material-card.selected { border-color:var(--primary); background:var(--primary-light); }
+    .material-card h4 { font-size:var(--fs-sm); margin-top:var(--space-sm); }
+    .material-card p { font-size:var(--fs-xs); color:var(--text-muted); }
+    .summary-card { background:var(--bg-alt); border:1px solid var(--border); border-radius:var(--radius-lg); padding:var(--space-2xl); }
+    .summary-row { display:flex; justify-content:space-between; padding:var(--space-sm) 0; border-bottom:1px solid var(--border); font-size:var(--fs-sm); }
+    .summary-row:last-child { border-bottom:none; }
+    .summary-total { display:flex; justify-content:space-between; padding:var(--space-md) 0 0; font-size:var(--fs-xl); font-weight:700; color:var(--primary); border-top:2px solid var(--primary); margin-top:var(--space-md); }
+    @media(max-width:768px){ .material-grid, .style-options { grid-template-columns:1fr !important; } }
+  </style>
+</head>
+<body>
+  <header class="header"><div class="header-inner">
+    <a href="index.html" class="logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="24" rx="16" ry="5" fill="currentColor" opacity="0.3"/><path d="M6 24c0-2 2-4 4-8s4-10 8-10 6 6 8 10 4 6 4 8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/><line x1="4" y1="24" x2="32" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> Atelier</a>
+    <nav class="nav"><a href="index.html">Home</a><a href="home-2.html">Home 2</a><a href="services.html">Services</a><a href="shop.html">Shop</a><a href="custom-orders.html" class="active">Custom Orders</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div class="header-actions"><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a><button class="theme-toggle" aria-label="Toggle theme"></button><button class="rtl-toggle" aria-label="Toggle RTL"></button><button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></div>
+  </div></header>
+  <div class="mobile-overlay"></div>
+  <nav class="mobile-menu">
+    <div class="mobile-menu-toggles">
+      <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      <button class="theme-toggle" aria-label="Toggle theme"></button>
+      <button class="rtl-toggle" aria-label="Toggle RTL"></button>
+    </div>
+    <a href="index.html">Home</a><a href="home-2.html">Home 2</a><a href="services.html">Services</a><a href="shop.html">Shop</a><a href="custom-orders.html" class="active">Custom Orders</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="custom-orders.html" class="btn btn-primary btn-full">Order Custom Hat</a>
+  </nav>
+
+  <section class="builder-hero">
+    <div class="container">
+      <h1 class="animate-in">Design Your Custom Hat</h1>
+      <p class="animate-in">Follow our step-by-step builder to create a hat that's uniquely yours. Choose your style, materials, and measurements.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-sm">
+      <!-- PROGRESS -->
+      <div class="builder-progress" id="builder-progress">
+        <div class="progress-step active" data-step="0"><div class="progress-dot">1</div><div class="progress-label">Style</div></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="1"><div class="progress-dot">2</div><div class="progress-label">Material</div></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2"><div class="progress-dot">3</div><div class="progress-label">Measurements</div></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3"><div class="progress-dot">4</div><div class="progress-label">Review</div></div>
+      </div>
+
+      <!-- STEP 1: Style -->
+      <div class="builder-panel active" id="panel-0">
+        <h2 class="text-center" style="margin-bottom:var(--space-md);">Choose Your Hat Style</h2>
+        <p class="text-center" style="color:var(--text-secondary);margin-bottom:var(--space-2xl);">Select the style that speaks to you. Each will be customized to your specifications.</p>
+        <div class="style-options">
+          <div class="style-card" onclick="this.parentElement.querySelectorAll('.style-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');">
+            <img src="images/products/fedora.png" alt="Fedora"><h3>Fedora</h3><p style="color:var(--text-muted);font-size:var(--fs-sm);">From $285</p>
+          </div>
+          <div class="style-card" onclick="this.parentElement.querySelectorAll('.style-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');">
+            <img src="images/products/cloche.png" alt="Cloche"><h3>Cloche</h3><p style="color:var(--text-muted);font-size:var(--fs-sm);">From $245</p>
+          </div>
+          <div class="style-card" onclick="this.parentElement.querySelectorAll('.style-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');">
+            <img src="images/products/sunhat.png" alt="Sun Hat"><h3>Sun Hat</h3><p style="color:var(--text-muted);font-size:var(--fs-sm);">From $220</p>
+          </div>
+          <div class="style-card" onclick="this.parentElement.querySelectorAll('.style-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');">
+            <img src="images/products/bowler.png" alt="Bowler"><h3>Bowler</h3><p style="color:var(--text-muted);font-size:var(--fs-sm);">From $310</p>
+          </div>
+          <div class="style-card" onclick="this.parentElement.querySelectorAll('.style-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');">
+            <img src="images/products/beret.png" alt="Beret"><h3>Beret</h3><p style="color:var(--text-muted);font-size:var(--fs-sm);">From $165</p>
+          </div>
+          <div class="style-card" onclick="this.parentElement.querySelectorAll('.style-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');">
+            <img src="images/products/fascinator.png" alt="Fascinator"><h3>Fascinator</h3><p style="color:var(--text-muted);font-size:var(--fs-sm);">From $195</p>
+          </div>
+        </div>
+        <div class="builder-actions"><div></div><button class="btn btn-primary" onclick="nextStep()">Next: Material →</button></div>
+      </div>
+
+      <!-- STEP 2: Material & Color -->
+      <div class="builder-panel" id="panel-1">
+        <h2 class="text-center" style="margin-bottom:var(--space-md);">Select Material &amp; Color</h2>
+        <p class="text-center" style="color:var(--text-secondary);margin-bottom:var(--space-2xl);">Choose from our premium selection of materials and colors.</p>
+        <h3 style="margin-bottom:var(--space-md);">Material</h3>
+        <div class="material-grid" style="margin-bottom:var(--space-2xl);">
+          <div class="material-card" onclick="this.parentElement.querySelectorAll('.material-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');"><h4>Italian Felt</h4><p>Premium rabbit fur felt</p></div>
+          <div class="material-card" onclick="this.parentElement.querySelectorAll('.material-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');"><h4>Straw</h4><p>Hand-woven natural straw</p></div>
+          <div class="material-card" onclick="this.parentElement.querySelectorAll('.material-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');"><h4>Wool</h4><p>Merino wool blend</p></div>
+          <div class="material-card" onclick="this.parentElement.querySelectorAll('.material-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');"><h4>Silk</h4><p>Luxurious silk fabric</p></div>
+          <div class="material-card" onclick="this.parentElement.querySelectorAll('.material-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');"><h4>Sinamay</h4><p>Natural abaca fibre</p></div>
+          <div class="material-card" onclick="this.parentElement.querySelectorAll('.material-card').forEach(c=>c.classList.remove('selected'));this.classList.add('selected');"><h4>Velvet</h4><p>Plush cotton velvet</p></div>
+        </div>
+        <h3 style="margin-bottom:var(--space-md);">Color</h3>
+        <div class="color-swatches" style="margin-bottom:var(--space-xl);">
+          <div class="swatch" style="background:#1A1A2E;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Navy"></div>
+          <div class="swatch" style="background:#8B5E3C;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Brown"></div>
+          <div class="swatch" style="background:#2D2D2D;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Black"></div>
+          <div class="swatch" style="background:#F5F0E8;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Cream"></div>
+          <div class="swatch" style="background:#8B2252;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Burgundy"></div>
+          <div class="swatch" style="background:#4A6741;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Forest Green"></div>
+          <div class="swatch" style="background:#C4956A;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Camel"></div>
+          <div class="swatch" style="background:#666;" onclick="this.parentElement.querySelectorAll('.swatch').forEach(s=>s.classList.remove('selected'));this.classList.add('selected');" title="Grey"></div>
+        </div>
+        <div class="builder-actions"><button class="btn btn-secondary" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="nextStep()">Next: Measurements →</button></div>
+      </div>
+
+      <!-- STEP 3: Measurements -->
+      <div class="builder-panel" id="panel-2">
+        <h2 class="text-center" style="margin-bottom:var(--space-md);">Your Measurements</h2>
+        <p class="text-center" style="color:var(--text-secondary);margin-bottom:var(--space-2xl);">For the perfect fit, provide your head measurements below.</p>
+        <div style="max-width:500px;margin:0 auto;">
+          <div class="form-group"><label class="form-label">Head Circumference (cm)</label><input type="number" class="form-input" placeholder="e.g. 57" min="50" max="65"></div>
+          <div class="form-group"><label class="form-label">Preferred Brim Width</label>
+            <select class="form-input"><option value="">Select brim width</option><option>Short (2")</option><option>Medium (2.75")</option><option>Wide (3.5")</option><option>Extra Wide (4"+)</option></select>
+          </div>
+          <div class="form-group"><label class="form-label">Crown Height Preference</label>
+            <select class="form-input"><option value="">Select crown height</option><option>Low profile</option><option>Standard</option><option>Tall</option></select>
+          </div>
+          <div class="form-group"><label class="form-label">Special Notes (optional)</label><textarea class="form-input" placeholder="Any special requests, preferences or allergies to materials..."></textarea></div>
+        </div>
+        <div class="builder-actions"><button class="btn btn-secondary" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="nextStep()">Review Order →</button></div>
+      </div>
+
+      <!-- STEP 4: Review -->
+      <div class="builder-panel" id="panel-3">
+        <h2 class="text-center" style="margin-bottom:var(--space-md);">Review Your Custom Order</h2>
+        <p class="text-center" style="color:var(--text-secondary);margin-bottom:var(--space-2xl);">Here's a summary of your bespoke hat design. Everything look good?</p>
+        <div class="summary-card" style="max-width:500px;margin:0 auto;">
+          <div class="summary-row"><span>Hat Style</span><strong>Fedora</strong></div>
+          <div class="summary-row"><span>Material</span><strong>Italian Felt</strong></div>
+          <div class="summary-row"><span>Color</span><strong>Brown</strong></div>
+          <div class="summary-row"><span>Head Size</span><strong>57 cm</strong></div>
+          <div class="summary-row"><span>Brim Width</span><strong>Medium (2.75")</strong></div>
+          <div class="summary-row"><span>Crown Height</span><strong>Standard</strong></div>
+          <div class="summary-row"><span>Estimated Time</span><strong>3-4 Weeks</strong></div>
+          <div class="summary-total"><span>Estimated Price</span><span>$350</span></div>
+        </div>
+        <div class="builder-actions" style="justify-content:center;margin-top:var(--space-2xl);"><button class="btn btn-secondary" onclick="prevStep()">← Back</button><button class="btn btn-primary btn-lg">Confirm &amp; Book</button></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="logo" style="color:#F0EBE3;"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="24" rx="16" ry="5" fill="currentColor" opacity="0.3"/><path d="M6 24c0-2 2-4 4-8s4-10 8-10 6 6 8 10 4 6 4 8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/><line x1="4" y1="24" x2="32" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> Atelier</a><p>Bespoke millinery crafted with passion and precision.</p></div>
+        <div><h3 class="footer-title">Quick Links</h3><div class="footer-links"><a href="shop.html">Shop</a><a href="custom-orders.html">Custom Orders</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        <div><h3 class="footer-title">Services</h3><div class="footer-links"><a href="services.html">Custom Design</a><a href="services.html">Bridal Hats</a><a href="services.html">Hat Repair</a><a href="services.html">Consultation</a></div></div>
+        <div><h3 class="footer-title">Contact</h3><div class="footer-links"><a href="mailto:hello@atelier.com">hello@atelier.com</a><a href="tel:+15551234567">+1 (555) 123-4567</a><a href="#">123 Fashion Avenue<br>New York, NY 10001</a></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Atelier. All rights reserved.</p><p>Crafted with care in New York City</p></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>initBuilder();</script>
+</body>
+</html>
