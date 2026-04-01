@@ -338,12 +338,24 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   border-radius: var(--radius-xl); padding: var(--space-3xl); box-shadow: var(--shadow-lg);
 }
 .auth-header { text-align: center; margin-bottom: var(--space-2xl); }
-.auth-header .logo { justify-content: center; margin-bottom: var(--space-lg); }
+.auth-header .logo { justify-content: center; margin-bottom: var(--space-lg); color: var(--secondary); }
+[data-theme="dark"] .auth-header .logo { color: #fff; }
 .auth-header h1 { font-size: var(--fs-2xl); margin-bottom: var(--space-sm); }
 .auth-header p { font-size: var(--fs-sm); color: var(--text-secondary); }
 .auth-icons {
   position: fixed; top: var(--space-xl); right: var(--space-xl);
-  display: flex; gap: var(--space-sm);
+  display: flex; gap: var(--space-sm); z-index: 1001;
+}
+.auth-icons .theme-toggle, .auth-icons .rtl-toggle {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+[data-theme="dark"] .auth-icons .theme-toggle, 
+[data-theme="dark"] .auth-icons .rtl-toggle {
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
 }
 .divider { display: flex; align-items: center; gap: var(--space-md); margin: var(--space-xl) 0; }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
@@ -511,6 +523,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   .builder-hero { margin-top: calc(var(--header-h) + var(--space-xl)); }
   .style-options { grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .step { padding: var(--space-xl) var(--space-md); }
   .header-actions { margin-left: auto; }
   .header-actions .btn,
   .header-actions .theme-toggle,
@@ -531,7 +544,9 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   .hero { min-height: 70vh; }
   .hero-content h1 { font-size: clamp(2rem, 6vw, 3rem); }
   .hero-actions { flex-direction: column; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .process-steps { grid-template-columns: 1fr; }
+  .step { padding: var(--space-lg) var(--space-md); }
+  .step-number { width: 44px; height: 44px; font-size: var(--fs-lg); margin-bottom: var(--space-md); }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: var(--space-md); text-align: center; }
