@@ -569,7 +569,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   .auth-card { padding: var(--space-xl); }
   .style-options { grid-template-columns: 1fr; }
   .cta-banner .btn { width: 100%; }
-  .builder-actions { justify-content: center; }
-  .builder-actions .btn { flex: 1; min-width: 140px; }
+  .builder-actions { flex-direction: column-reverse; gap: var(--space-md); }
+  .builder-actions .btn { width: 100%; }
   .builder-actions div:empty { display: none; } /* Hide empty div for space-between on mobile */
 }
