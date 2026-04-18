@@ -1,62 +1,207 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about Atelier — Our brand story, master designer, and the art of handcrafted millinery since 2015.">
+  <meta name="description"
+    content="Learn about Atelier — Our brand story, master designer, and the art of handcrafted millinery since 2015.">
   <title>Atelier | About — Our Story &amp; Craft</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎩</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎩</text></svg>">
   <style>
-    .about-hero { background:var(--bg-alt); margin-top:var(--header-h); padding:var(--space-4xl) 0; text-align:center; }
-    .about-hero h1 { font-size:var(--fs-hero); margin-bottom:var(--space-md); }
-    .about-hero p { color:var(--text-secondary); font-size:var(--fs-lg); max-width:600px; margin:0 auto; }
-    .timeline { position:relative; max-width:700px; margin:0 auto; }
-    .timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--border); transform:translateX(-50%); }
-    .timeline-item { position:relative; margin-bottom:var(--space-2xl); padding:0 calc(50% + 30px); }
-    .timeline-item:nth-child(odd) { text-align:right; padding:0 calc(50% + 30px) 0 0; }
-    .timeline-item:nth-child(even) { text-align:left; padding:0 0 0 calc(50% + 30px); }
-    .timeline-dot { position:absolute; left:50%; top:0; width:16px; height:16px; background:var(--primary); border-radius:50%; transform:translateX(-50%); border:3px solid var(--bg); box-shadow:0 0 0 2px var(--primary); }
-    .timeline-year { font-family:var(--font-heading); font-size:var(--fs-lg); font-weight:700; color:var(--primary); margin-bottom:4px; }
-    .timeline-text { font-size:var(--fs-sm); color:var(--text-secondary); }
-    .designer-section { display:grid; grid-template-columns:400px 1fr; gap:var(--space-3xl); align-items:center; }
-    .designer-img { border-radius:var(--radius-xl); overflow:hidden; }
-    .designer-img img { width:100%; height:500px; object-fit:cover; }
-    .craft-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-xl); }
-    .craft-step { text-align:center; padding:var(--space-2xl); border-radius:var(--radius-lg); background:var(--bg-card); border:1px solid var(--border); transition:all var(--transition); }
-    .craft-step:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
-    .craft-icon { width:64px; height:64px; margin:0 auto var(--space-lg); background:var(--primary-light); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); }
-    @media(max-width:1024px){ 
-      .designer-section { grid-template-columns:1fr; text-align:center; } 
-      .designer-section > div:last-child { text-align:center; }
-      .designer-img img { height:350px; } 
-      .craft-grid { grid-template-columns:1fr; } 
-      .timeline-item,.timeline-item:nth-child(odd),.timeline-item:nth-child(even) { text-align:left; padding:0 0 0 40px; } 
-      .timeline::before { left:10px; } 
-      .timeline-dot { left:10px; }
-      .split-content { text-align:center; }
-      .designer-section blockquote, .designer-section p { text-align:center; border-left:none; padding-left:0; }
+    .about-hero {
+      background: var(--bg-alt);
+      margin-top: var(--header-h);
+      padding: var(--space-4xl) 0;
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-size: var(--fs-hero);
+      margin-bottom: var(--space-md);
+    }
+
+    .about-hero p {
+      color: var(--text-secondary);
+      font-size: var(--fs-lg);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-2xl);
+      padding: 0 calc(50% + 30px);
+    }
+
+    .timeline-item:nth-child(odd) {
+      text-align: right;
+      padding: 0 calc(50% + 30px) 0 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      text-align: left;
+      padding: 0 0 0 calc(50% + 30px);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--primary);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .timeline-year {
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .timeline-text {
+      font-size: var(--fs-sm);
+      color: var(--text-secondary);
+    }
+
+    .designer-section {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+    }
+
+    .designer-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .designer-img img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+
+    .craft-step {
+      text-align: center;
+      padding: var(--space-2xl);
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+
+    .craft-step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .craft-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--space-lg);
+      background: var(--primary-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    @media(max-width:1024px) {
+      .designer-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .designer-section>div:last-child {
+        text-align: center;
+      }
+
+      .designer-img img {
+        height: 350px;
+      }
+
+      .craft-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        text-align: left;
+        padding: 0 0 0 40px;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-dot {
+        left: 10px;
+      }
+
+      .split-content {
+        text-align: center;
+      }
+
+      .designer-section blockquote,
+      .designer-section p {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="header" id="header">
     <div class="header-inner">
       <a href="index.html" class="logo" id="logo">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="18" cy="24" rx="16" ry="5" fill="currentColor" opacity="0.3"/><path d="M6 24c0-2 2-4 4-8s4-10 8-10 6 6 8 10 4 6 4 8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/><line x1="4" y1="24" x2="32" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-        Atelier
-      </a>
+        <img src="images/logo.png" alt="Atelier" height="40">
+      <span>Atelier</span></a>
       <nav class="nav" id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="home-2.html">Home 2</a>
-        <a href="services.html">Services</a>
+        <a href="index.html">Home</a><a href="home-2.html">Home 2</a>
         <a href="about.html" class="active">About</a>
-        <a href="shop.html">Shop</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="custom-orders.html">Custom Orders</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
-        <a href="signup.html" class="btn btn-primary btn-sm" id="cta-signup">Sign Up</a>
+
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
         <button class="rtl-toggle" id="rtl-toggle" aria-label="Toggle RTL"></button>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -68,21 +213,24 @@
   <div class="mobile-overlay" id="mobile-overlay"></div>
   <nav class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-toggles">
-      <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+
       <button class="theme-toggle" aria-label="Toggle theme"></button>
       <button class="rtl-toggle" aria-label="Toggle RTL"></button>
     </div>
-    <a href="index.html">Home</a>
-    <a href="home-2.html">Home 2</a>
-    <a href="services.html">Services</a>
+    <a href="index.html">Home</a><a href="home-2.html">Home 2</a>
     <a href="about.html" class="active">About</a>
-    <a href="shop.html">Shop</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
     <a href="custom-orders.html">Custom Orders</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <section class="about-hero">
-    <div class="container"><h1 class="animate-in">Our Story</h1><p class="animate-in">A passion for craft, a devotion to elegance, and a belief that the perfect hat can transform how you feel.</p></div>
+    <div class="container">
+      <h1 class="animate-in">Our Story</h1>
+      <p class="animate-in">A passion for craft, a devotion to elegance, and a belief that the perfect hat can transform
+        how you feel.</p>
+    </div>
   </section>
 
   <!-- BRAND STORY -->
@@ -92,8 +240,11 @@
         <div class="split-img"><img src="images/about/story.png" alt="Atelier hat collection in boutique"></div>
         <div class="split-content">
           <h2>From Passion to Atelier</h2>
-          <p>Founded in 2015 in the heart of New York City, Atelier was born from a simple belief: that a beautifully crafted hat has the power to elevate not just an outfit, but a moment. What began as a small workshop above a vintage clothing store has grown into one of the most respected boutique millineries in the country.</p>
-          <p>Every hat that leaves our atelier carries our founding promise — uncompromising craftsmanship, exceptional materials, and a design that feels both timeless and distinctly personal.</p>
+          <p>Founded in 2015 in the heart of New York City by master milliner Isabelle Moreau, Atelier was born from a simple belief: that a beautifully
+            crafted hat has the power to elevate not just an outfit, but a moment. What began as a small workshop above
+            a vintage clothing store has grown into one of the most respected boutique millineries in the country.</p>
+          <p>Every hat that leaves our atelier carries our founding promise — uncompromising craftsmanship, exceptional
+            materials, and a design that feels both timeless and distinctly personal.</p>
         </div>
       </div>
     </div>
@@ -105,11 +256,34 @@
       <h2 class="section-title reveal">Our Journey</h2>
       <p class="section-subtitle reveal">Milestones that shaped who we are today.</p>
       <div class="timeline reveal">
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2015</div><p class="timeline-text">Atelier founded in a small Manhattan workshop with just three hat blocks and a dream.</p></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2017</div><p class="timeline-text">First feature in Vogue — "The New Milliners to Watch." Orders tripled overnight.</p></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2019</div><p class="timeline-text">Opened our flagship boutique on Fashion Avenue with a full atelier and showroom.</p></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2021</div><p class="timeline-text">Launched the Custom Hat Builder — bringing bespoke design to the digital experience.</p></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024</div><p class="timeline-text">Over 5,000 custom hats crafted. Partnerships with leading bridal designers worldwide.</p></div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2015</div>
+          <p class="timeline-text">Atelier founded in a small Manhattan workshop with just three hat blocks and a dream.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2017</div>
+          <p class="timeline-text">First feature in Vogue — "The New Milliners to Watch." Orders tripled overnight.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2019</div>
+          <p class="timeline-text">Opened our flagship boutique on Fashion Avenue with a full atelier and showroom.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2021</div>
+          <p class="timeline-text">Launched the Custom Hat Builder — bringing bespoke design to the digital experience.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2024</div>
+          <p class="timeline-text">Over 5,000 custom hats crafted. Partnerships with leading bridal designers worldwide.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -121,10 +295,20 @@
         <div class="designer-img"><img src="images/about/designer.png" alt="Lead Designer"></div>
         <div>
           <h2 style="font-size:var(--fs-3xl);margin-bottom:var(--space-md);">Meet Our Designer</h2>
-          <p style="font-size:var(--fs-lg);color:var(--primary);font-family:var(--font-heading);margin-bottom:var(--space-md);">Isabelle Moreau — Founder &amp; Lead Milliner</p>
-          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-md);">With over 15 years of experience in haute couture millinery, Isabelle trained under legendary hat-makers in Paris and London before founding Atelier. Her designs seamlessly blend traditional craftsmanship with a modern editorial eye.</p>
-          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-xl);">Her work has been worn by celebrities, featured at royal events, and exhibited in fashion museums. Yet her greatest joy remains that moment when a client tries on their custom hat for the first time and their face lights up.</p>
-          <p style="font-style:italic;color:var(--text-secondary);border-left:3px solid var(--primary);padding-left:var(--space-lg);">"A hat isn't just an accessory — it's an attitude. When you find the right one, you don't just wear it. You become it."</p>
+          <p
+            style="font-size:var(--fs-lg);color:var(--primary);font-family:var(--font-heading);margin-bottom:var(--space-md);">
+            Isabelle Moreau — Founder &amp; Lead Milliner</p>
+          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-md);">With over 15 years of
+            experience in haute couture millinery, Isabelle trained under legendary hat-makers in Paris and London
+            before founding Atelier. Her designs seamlessly blend traditional craftsmanship with a modern editorial eye.
+          </p>
+          <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:var(--space-xl);">Her work has been worn
+            by celebrities, featured at royal events, and exhibited in fashion museums. Yet her greatest joy remains
+            that moment when a client tries on their custom hat for the first time and their face lights up.</p>
+          <p
+            style="font-style:italic;color:var(--text-secondary);border-left:3px solid var(--primary);padding-left:var(--space-lg);">
+            "A hat isn't just an accessory — it's an attitude. When you find the right one, you don't just wear it. You
+            become it."</p>
         </div>
       </div>
     </div>
@@ -137,16 +321,36 @@
       <p class="section-subtitle reveal">Every hat goes through seven meticulous stages of creation.</p>
       <div class="craft-grid reveal">
         <div class="craft-step">
-          <div class="craft-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-          <h3>Design</h3><p style="color:var(--text-secondary);font-size:var(--fs-sm);">Sketching and planning the hat's silhouette, proportions and details.</p>
+          <div class="craft-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg></div>
+          <h3>Design</h3>
+          <p style="color:var(--text-secondary);font-size:var(--fs-sm);">Sketching and planning the hat's silhouette,
+            proportions and details.</p>
         </div>
         <div class="craft-step">
-          <div class="craft-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-          <h3>Material Selection</h3><p style="color:var(--text-secondary);font-size:var(--fs-sm);">Choosing the perfect felt, straw, or fabric from our curated collection.</p>
+          <div class="craft-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+              <line x1="9" y1="9" x2="9.01" y2="9" />
+              <line x1="15" y1="9" x2="15.01" y2="9" />
+            </svg></div>
+          <h3>Material Selection</h3>
+          <p style="color:var(--text-secondary);font-size:var(--fs-sm);">Choosing the perfect felt, straw, or fabric
+            from our curated collection.</p>
         </div>
         <div class="craft-step">
-          <div class="craft-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-          <h3>Blocking</h3><p style="color:var(--text-secondary);font-size:var(--fs-sm);">Shaping the hat on traditional wooden blocks using steam and pressure.</p>
+          <div class="craft-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg></div>
+          <h3>Blocking</h3>
+          <p style="color:var(--text-secondary);font-size:var(--fs-sm);">Shaping the hat on traditional wooden blocks
+            using steam and pressure.</p>
         </div>
       </div>
     </div>
@@ -156,22 +360,61 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo" style="color:#F0EBE3;"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><ellipse cx="18" cy="24" rx="16" ry="5" fill="currentColor" opacity="0.3"/><path d="M6 24c0-2 2-4 4-8s4-10 8-10 6 6 8 10 4 6 4 8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/><line x1="4" y1="24" x2="32" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> Atelier</a>
-          <p>Bespoke millinery crafted with passion and precision. Each hat is a unique work of art.</p>
+          <a href="index.html" class="logo" style="color:#F0EBE3;"><img src="images/logo.png" alt="Atelier"
+              height="40"><span>Atelier</span></a>
+          <p>Bespoke millinery crafted with passion and precision by master designer Isabelle Moreau.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-            <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-            <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4 4 0 1 1 8 0c0 4-3 6-3 6"/><path d="M12 2a10 10 0 1 0 10 10"/><line x1="10" y1="16" x2="8" y2="22"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg></a>
+            <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M8 12a4 4 0 1 1 8 0c0 4-3 6-3 6" />
+                <path d="M12 2a10 10 0 1 0 10 10" />
+                <line x1="10" y1="16" x2="8" y2="22" />
+              </svg></a>
           </div>
         </div>
-        <div><h3 class="footer-title">Quick Links</h3><div class="footer-links"><a href="shop.html">Shop</a><a href="custom-orders.html">Custom Orders</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
-        <div><h3 class="footer-title">Services</h3><div class="footer-links"><a href="services.html">Custom Design</a><a href="services.html">Bridal Hats</a><a href="services.html">Hat Repair</a><a href="services.html">Consultation</a></div></div>
-        <div><h3 class="footer-title">Contact</h3><div class="footer-links"><a href="mailto:hello@atelier.com">hello@atelier.com</a><a href="tel:+15551234567">+1 (555) 123-4567</a><a href="contact.html">123 Fashion Avenue<br>New York, NY 10001</a><a href="#">Mon–Sat: 10am – 6pm</a></div></div>
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <div class="footer-links"><a href="portfolio.html">Portfolio</a><a href="custom-orders.html">Custom Orders</a><a
+              href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+        </div>
+        <div>
+          <h3 class="footer-title">Services</h3>
+          <div class="footer-links"><a href="services.html">Custom Design</a><a href="services.html">Bridal Hats</a><a
+              href="services.html">Hat Repair</a><a href="services.html">Consultation</a></div>
+        </div>
+        <div>
+          <h3 class="footer-title">Contact</h3>
+          <div class="footer-links"><a href="mailto:hello@atelier.com">hello@atelier.com</a><a
+              href="tel:+15551234567">+1 (555) 123-4567</a><a href="contact.html">123 Fashion Avenue<br>New York, NY
+              10001</a><a href="#">Mon–Sat: 10am – 6pm</a></div>
+        </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Atelier. All rights reserved.</p><p>Crafted with care in New York City</p></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Atelier. All rights reserved.</p>
+        <p>Crafted with care in New York City</p>
+      </div>
     </div>
   </footer>
   <script src="js/main.js"></script>
 </body>
+
 </html>
